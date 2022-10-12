@@ -89,3 +89,60 @@ const inventory = [
 
 
 // Ideas: 
+
+// function priceFormatter(price) {
+   
+//     return `$${price.toFixed(2)}`
+// }
+// console.log(priceFormatter(23/7))
+
+// // function titleAndAuthor(book) {
+// //     return `${book.title} by ${book.author}`
+// // }
+
+// // console.log(titleAndAuthor(inventory[3]))
+
+const titleAndAuthor = (book) => {
+
+`${book.title} by ${book.author}`
+
+}
+
+// let newTitle = "the java script book"
+
+// function buildBook(price, author, imageUrl) {
+//     const obj = {}
+//     obj.title = newTitle;
+//     obj.price = price;
+//     obj.author = author;
+//     if(!imageUrl){
+//         obj.imageUrl = "PLACEHOLDER"
+//     } else {
+//         return obj.imageURL = imageUrl;
+//     }
+    
+    
+//     return obj;
+  
+//}
+
+console.log(buildBook(12.99, "John McKinnon"))
+
+function mapOverArray(array, callback) {
+   const newArray = []
+    for(let i = 0; i < array.length; i ++) {
+        newArray.push(callback(array[i]))
+        
+    }
+    return newArray
+}
+
+console.log(mapOverArray(inventory, titleAndAuthor))
+
+
+const transformed = inventory.map(book => {
+    console.log(book.title)
+    return (titleAndAuthor(book))
+})
+
+console.log(transformed)
